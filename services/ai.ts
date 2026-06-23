@@ -17,7 +17,7 @@ export const aiService = {
    */
   async generateQuestions(topic: string, subject: string, grade: string, count: number = 1, level?: MucDo, type: string = "TracNghiem") {
     // Comment: Khởi tạo instance mới mỗi lần gọi để đảm bảo dùng API Key mới nhất từ process.env.API_KEY
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
     const systemInstruction = `Bạn là Chuyên gia Khảo thí STEM. Nhiệm vụ: Soạn ${count} câu hỏi môn ${subject} lớp ${grade}, chủ đề "${topic}".
 
@@ -70,7 +70,7 @@ export const aiService = {
    */
   async extractQuestionsFromDoc(base64Data: string, mimeType: string) {
     // Comment: Ensure GoogleGenAI instance is created right before making the call.
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
     const prompt = `Bạn là chuyên gia số hóa đề thi. Hãy trích xuất toàn bộ các câu hỏi từ tài liệu này thành định dạng JSON.
     Yêu cầu:
@@ -120,7 +120,7 @@ export const aiService = {
   },
 
   async extractMatrixFromImage(base64Data: string, mimeType: string) {
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     
     const prompt = `Bạn là chuyên gia phân tích ma trận đề thi. Hãy trích xuất cấu trúc ma trận đề thi từ tài liệu/hình ảnh này thành định dạng JSON.
     Yêu cầu:
