@@ -1,0 +1,8 @@
+{
+  "name": "BaoChau - Ngân Hàng Câu Hỏi và Tạo Đề Thi - Nâng Cao (Bảo Châu)",
+  "description": "Hệ thống quản lý ngân hàng câu hỏi, xây dựng ma trận và tạo đề thi chuyên nghiệp cho giáo viên Việt Nam. Hỗ trợ mọi cấp học, xuất bản đề thi, đáp án và ma trận chuẩn quy định.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}

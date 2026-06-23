@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ngân Hàng Câu Hỏi và Tạo Đề Thi - Nâng Cao (Bảo Châu)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- KaTeX CSS & JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/mhchem.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+    
+    <!-- DOMPurify for Security -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        @media print {
+            .no-print { display: none !important; }
+            .print-only { display: block !important; }
+            body { background: white; }
+            .exam-page { padding: 0 !important; margin: 0 !important; }
+        }
+        .print-only { display: none; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        
+        /* STEM Optimization & KaTeX Fixes */
+        .katex { 
+            font-size: 1.05em; 
+            line-height: 1.2; 
+            white-space: normal; 
+        }
+        
+        .katex-display { 
+            overflow-x: auto !important; 
+            overflow-y: hidden !important; 
+            padding: 1.2rem 0;
+            margin: 1.5rem 0;
+            text-align: center;
+            scrollbar-width: thin;
+        }
+
+        /* Tinh chỉnh khoảng cách cho inline math */
+        .math-inline-wrapper {
+            display: inline-block;
+            padding: 0 0.25rem;
+            vertical-align: middle;
+            line-height: 1.4;
+        }
+
+        /* Tinh chỉnh khoảng cách cho block math */
+        .math-block-wrapper {
+            margin: 1.2rem 0;
+            display: block;
+            clear: both;
+        }
+        
+        .figure-container svg {
+            max-width: 100%;
+            height: auto;
+            margin: 1.5rem auto;
+            display: block;
+        }
+        
+        .latex-container {
+            line-height: 1.7;
+        }
+
+        /* KaTeX Error Handling CSS */
+        .katex-error {
+            color: #e11d48 !important; /* Rose 600 */
+            background-color: #fff1f2; /* Rose 50 */
+            border: 1px solid #fecaca; /* Rose 200 */
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 0.85em;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 0 2px;
+            font-weight: 500;
+        }
+
+        .katex-error::before {
+            content: "⚠️ Công thức lỗi:";
+            font-weight: 800;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            background: #e11d48;
+            color: white;
+            padding: 1px 4px;
+            border-radius: 3px;
+            white-space: nowrap;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "dexie": "https://esm.sh/dexie@^4.2.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "html-to-image": "https://esm.sh/html-to-image@^1.11.11",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
